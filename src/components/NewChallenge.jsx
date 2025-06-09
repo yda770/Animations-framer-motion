@@ -34,7 +34,7 @@ export default function NewChallenge({ onDone }) {
       !challenge.image
     ) {
       animate('input, textarea',
-        { x: [-10, 0, 10, 0] },
+        { x: [-10, 0] },
         { type: 'spring', duration: 0.2, delay: stagger(0.05) })
       return;
     }
@@ -63,11 +63,13 @@ export default function NewChallenge({ onDone }) {
 
         <motion.ul
           id="new-challenge-images"
+
           variants={{
             visible: {
               transition: { staggerChildren: 0.5 }
             }
           }}
+          // transition={{ staggerChildren: 0.5 }}
         >
           {images.map((image) => (
             <motion.li
